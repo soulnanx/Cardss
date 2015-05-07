@@ -13,7 +13,7 @@ public class UIHelperMyCards {
     public TextView lastUpdate;
 
     public UIHelperMyCards(View v) {
-        cards = (ListView) v.findViewById(R.id.cards_lv);
-        lastUpdate = (TextView) v.findViewById(R.id.last_update_tv);
+        cards = (ListView) v.findViewById(R.id.my_cards_cards_lv);
+        lastUpdate = (TextView) v.findViewById(R.id.my_cards_last_update_tv);
     }
 }
