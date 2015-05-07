@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Cabal</string>
+    <string name="default_item_menu">Default</string>
+    <string name="my_cards_fragment">Meus Cartões</string>
+    <string name="places_fragment">Rede de Aceitação</string>
+    <string name="new_place_fragment">Indicar Estabelecimento</string>
+    <string name="phones_fragment">Telefones Úteis</string>
+    <string name="settings_fragment">Configurações</string>
+    <string name="news_fragment">Notícias</string>
+</resources>
