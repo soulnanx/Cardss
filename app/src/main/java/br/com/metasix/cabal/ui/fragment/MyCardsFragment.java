@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import br.com.metasix.cabal.R;
+import br.com.metasix.cabal.adapter.CardAdapter;
+import br.com.metasix.cabal.entity.Card;
 import br.com.metasix.cabal.ui.activity.DrawerLayoutMain;
 import br.com.metasix.cabal.ui.helper.UIHelperMyCards;
 
@@ -32,6 +34,7 @@ public class MyCardsFragment extends Fragment {
     }
 
     private void setEvents() {
+        ui.cards.setAdapter(new CardAdapter(MyCardsFragment.this.getActivity(), R.layout.item_my_cards_list, Card.getFakeListStored()));
     }
 
     private void init() {

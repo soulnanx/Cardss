@@ -7,4 +7,5 @@
     <string name="phones_fragment">Telefones Úteis</string>
     <string name="settings_fragment">Configurações</string>
     <string name="news_fragment">Notícias</string>
+    <string name="card_blocked">Cartão bloqueado, favor entrar em contato com a operadora</string>
 </resources>

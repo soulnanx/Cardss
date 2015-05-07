@@ -11,16 +11,17 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.metasix.cabal.R;
-import br.com.metasix.cabal.pojo.ItemMenu;
+import br.com.metasix.cabal.entity.Card;
+import br.com.metasix.cabal.enums.CardType;
 
 /**
  * Created by renan on 4/30/15.
  */
-public class CardAdapter extends ArrayAdapter<ItemMenu>  {
+public class CardAdapter extends ArrayAdapter<Card>  {
 
     private int resource;
 
-    public CardAdapter(Context context, int resource, List<ItemMenu> objects) {
+    public CardAdapter(Context context, int resource, List<Card> objects) {
         super(context, resource, objects);
         this.resource = resource;
     }
@@ -29,7 +30,7 @@ public class CardAdapter extends ArrayAdapter<ItemMenu>  {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Holder holder;
-        ItemMenu item = getItem(position);
+        Card item = getItem(position);
 
         if (convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(resource, null);
@@ -39,19 +40,43 @@ public class CardAdapter extends ArrayAdapter<ItemMenu>  {
             holder = (Holder) convertView.getTag();
         }
 
-        holder.icon.setImageDrawable(getContext().getResources().getDrawable(item.getIcon()));
-        holder.label.setText(getContext().getResources().getString(item.getLabel()));
+        holder.card.setImageDrawable(
+                getContext().getResources().getDrawable(
+                        CardType.fromId(item.getCardType()).getResource()));
 
+        holder.title.setText(CardType.fromId(item.getCardType()).getTitle());
+        holder.number.setText(item.getNumber());
+
+        setStatus(item, holder);
+
+        notifyDataSetChanged();
         return convertView;
     }
 
+    private void setStatus(Card card, Holder holder) {
+        if (Card.ACTIVE == card.getStatus()){
+            holder.status.setVisibility(View.VISIBLE);
+            holder.status.setText(R.string.card_blocked);
+        } else {
+            holder.balance.setVisibility(View.VISIBLE);
+            holder.balance.setText(card.getBalance());
+        }
+
+    }
+
     class Holder {
-        ImageView icon;
-        TextView label;
+        ImageView card;
+        TextView title;
+        TextView balance;
+        TextView status;
+        TextView number;
 
         public Holder(View v){
-            icon = (ImageView) v.findViewById(R.id.item_img);
-            label = (TextView) v.findViewById(R.id.item_txt_name);
+            card = (ImageView) v.findViewById(R.id.item_my_cards_card_im);
+            title = (TextView) v.findViewById(R.id.item_my_cards_title_tv);
+            balance = (TextView) v.findViewById(R.id.item_my_cards_balance_tv);
+            status = (TextView) v.findViewById(R.id.item_my_cards_status_tv);
+            number = (TextView) v.findViewById(R.id.item_my_cards_number_tv);
         }
 
     }
