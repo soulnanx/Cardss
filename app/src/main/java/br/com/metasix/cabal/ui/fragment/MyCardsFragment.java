@@ -18,7 +18,7 @@ import br.com.metasix.cabal.ui.helper.UIHelperMyCards;
 public class MyCardsFragment extends Fragment {
 
     public static final int NAME_ITEM = R.string.my_cards_fragment;
-    public static final int ICON_ITEM = android.R.drawable.ic_menu_myplaces;
+    public static final int ICON_ITEM = R.drawable.ic_my_cards_menu;
 
     private View view;
     private UIHelperMyCards ui;

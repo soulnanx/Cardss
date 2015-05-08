@@ -19,13 +19,22 @@ public class Card {
     private String lastUpdate;
 
     public static final int ACTIVE = 1;
-    private static final int BLOCKED = 2;
+    public static final int BLOCKED = 2;
+    public static final int NEW = 0;
 
     public Card(String token, String number, int cardType, String lastUpdate) {
         this.number = number;
         this.token = token;
         this.cardType = cardType;
         this.lastUpdate = lastUpdate;
+    }
+
+    public Card(String token, String number, int cardType, String lastUpdate, int status) {
+        this.number = number;
+        this.token = token;
+        this.cardType = cardType;
+        this.lastUpdate = lastUpdate;
+        this.status = status;
     }
 
     public Card(String token, String lastUpdate, String balance, int status) {
@@ -38,9 +47,9 @@ public class Card {
     public static List<Card> getFakeListStored(){
         List<Card> l = new ArrayList<>();
 
-        l.add(new Card( "as654", "3214", CardType.REFEICAO.getId(), "25/05/15 14hs00"));
-        l.add(new Card("as321", "3255", CardType.ALIMENTACAO.getId(), "25/05/15 14hs00"));
-        l.add(new Card("as987","3217", CardType.COMBUSTIVEL.getId(), "25/05/15 14hs00"));
+        l.add(new Card( "as654", "3214", CardType.REFEICAO.getId(), "25/05/15 14hs00", ACTIVE));
+        l.add(new Card("as321", "3255", CardType.ALIMENTACAO.getId(), "25/05/15 14hs00", BLOCKED));
+        l.add(new Card("as987","3217", CardType.COMBUSTIVEL.getId(), "25/05/15 14hs00", NEW));
 
         return l;
     }

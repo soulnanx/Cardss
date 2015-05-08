@@ -21,7 +21,7 @@ import br.com.metasix.cabal.ui.helper.UIHelperPlaces;
 public class PlacesFragment extends Fragment {
 
     public static final int NAME_ITEM = R.string.places_fragment;
-    public static final int ICON_ITEM = android.R.drawable.ic_menu_myplaces;
+    public static final int ICON_ITEM = R.drawable.ic_places_menu;
 
     private View view;
     private UIHelperPlaces ui;
