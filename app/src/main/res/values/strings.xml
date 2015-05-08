@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Cabal</string>
+    <string name="key_store_map_dev_call">AIzaSyDSpzI3prWpMjL_1oKkWUOe29czHfCk3VQ</string>
     <string name="default_item_menu">Default</string>
     <string name="my_cards_fragment">Meus Cartões</string>
     <string name="places_fragment">Rede de Aceitação</string>
@@ -8,4 +9,7 @@
     <string name="settings_fragment">Configurações</string>
     <string name="news_fragment">Notícias</string>
     <string name="card_blocked">Cartão bloqueado, favor entrar em contato com a operadora</string>
+    <string name="search">Procurar...</string>
+
+    <string name="exception_erro_err_internet_disconnected">É necessário conexão a internet no primeiro uso</string>
 </resources>
