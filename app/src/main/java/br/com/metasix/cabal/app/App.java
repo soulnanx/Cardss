@@ -25,11 +25,12 @@ public class App extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
-
+        init();
     }
 
     public void init(){
         myCards = new ArrayList<Card>();
+        tasks = new ArrayList<>();
     }
 
     public void registerTask(AsyncTask<?,?,?> task){

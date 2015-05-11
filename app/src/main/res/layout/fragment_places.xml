@@ -63,7 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/places_address_card"
             android:layout_gravity="center"
-            card_view:cardCornerRadius="2dp">
+            card_view:cardCornerRadius="2dp"
+            android:visibility="gone">
 
             <Spinner
                 android:id="@+id/spinner"
