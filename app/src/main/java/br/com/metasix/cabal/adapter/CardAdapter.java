@@ -54,12 +54,21 @@ public class CardAdapter extends ArrayAdapter<Card>  {
     }
 
     private void setStatus(Card card, Holder holder) {
-        if (Card.ACTIVE == card.getStatus()){
-            holder.status.setVisibility(View.VISIBLE);
-            holder.status.setText(R.string.card_blocked);
-        } else {
-            holder.balance.setVisibility(View.VISIBLE);
-            holder.balance.setText(card.getBalance());
+        switch (card.getStatus()){
+            case Card.BLOCKED:
+                holder.status.setVisibility(View.VISIBLE);
+                holder.status.setText(R.string.card_blocked);
+                break;
+
+            case Card.ACTIVE:
+                holder.balance.setVisibility(View.VISIBLE);
+                holder.balance.setText(card.getBalance());
+                break;
+
+            case Card.NEW:
+                holder.status.setVisibility(View.GONE);
+                holder.balance.setVisibility(View.GONE);
+                break;
         }
 
     }

@@ -41,7 +41,7 @@ public class PlacesFragment extends Fragment {
     private static final int MAX_RESULT_TEXT = 1;
 
     public static final int NAME_ITEM = R.string.places_fragment;
-    public static final int ICON_ITEM = android.R.drawable.ic_menu_myplaces;
+    public static final int ICON_ITEM = R.drawable.ic_places_menu;
 
     private View view;
     private UIHelperPlaces ui;

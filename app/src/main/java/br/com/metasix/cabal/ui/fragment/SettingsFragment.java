@@ -16,7 +16,7 @@ import br.com.metasix.cabal.ui.helper.UIHelperSettings;
 public class SettingsFragment extends Fragment {
 
     public static final int NAME_ITEM = R.string.settings_fragment;
-    public static final int ICON_ITEM = android.R.drawable.ic_menu_myplaces;
+    public static final int ICON_ITEM = R.drawable.ic_settings_menu;
 
     private View view;
     private UIHelperSettings ui;
